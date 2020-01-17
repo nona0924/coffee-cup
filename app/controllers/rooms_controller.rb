@@ -30,7 +30,7 @@ class RoomsController < ApplicationController
       @room = Room.find(params[:id])
       if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
       else
-      flash[:alert] = "無効なユーザー"
+      flash[:alert] = "無効なユーザーです"
       redirect_to :back
       end
   end
